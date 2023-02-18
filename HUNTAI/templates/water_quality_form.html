@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Water Potability Checker</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin: 0;
+		}
+
+		form {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		label {
+			display: block;
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"] {
+			font-size: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 20px;
+			padding: 10px 20px;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.result {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.result h2 {
+			font-size: 24px;
+			margin: 0;
+		}
+
+		.result p {
+			font-size: 20px;
+			margin: 10px 0;
+		}
+
+		.good {
+			color: #009933;
+			font-weight: bold;
+		}
+
+		.bad {
+			color: #ff0000;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Water Potability Checker</h1>
+	</header>
+
+	<form method="post" action="/check_water_quality" onkeypress="return event.keyCode != 13;">
+		<label for="ph">pH Level:</label>
+		<input type="text" id="ph" name="ph" placeholder="Enter pH level (0-14)">
+	
+		<label for="turbidity">Turbidity:</label>
+		<input type="text" id="turbidity" name="turbidity" placeholder="Enter turbidity (NTU)">
+	
+		<label for="Hardness">Hardness:</label>
+		<input type="text" id="Hardness" name="Hardness" placeholder="Enter Hardness level (ppm)">
+	
+		<label for="Solids">Solids:</label>
+		<input type="text" id="Solids" name="Solids" placeholder="Enter Solids level (ppm)">
+	
+		<label for="Chloramines">Chloramines:</label>
+		<input type="text" id="Chloramines" name="Chloramines" placeholder="Enter Chloramines level (ppm)">
+	
+		<label for="Sulfate">Sulfate:</label>
+		<input type="text" id="Sulfate" name="Sulfate" placeholder="Enter Sulfate level (ppm)">
+	
+		<label for="Conductivity">Conductivity:</label>
+		<input type="text" id="Conductivity" name="Conductivity" placeholder="Enter Conductivity level (ppm)">
+	
+		<label for="organic carbon">organic carbon:</label>
+		<input type="text" id="organic carbon" name="organic carbon" placeholder="Enter organic carbon level (ppm)">
+	
+		<label for="Trihalomethanes">Trihalomethanes:</label>
+		<input type="text" id="Trihalomethanes" name="Trihalomethanes" placeholder="Enter Trihalomethanes level (ppm)">
+	
+		<input type="submit" value="Check Potability">
+	</form>
+	
+	
+
+	</body>
+  </html>

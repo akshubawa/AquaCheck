@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to my Water Quality Checker</title>
+	<title>Data Demons - Water Quality Checker</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
+			background-color: #262626;
+			color: #fff;
 		}
 
 		header {
-			background-color: #4CAF50;
+			background-color: #2d2d2d;
 			color: #fff;
 			padding: 20px;
-			text-align: center;
+			text-align: right;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
 
 		h1 {
@@ -21,30 +26,98 @@
 			margin: 0;
 		}
 
+		#logo {
+			width: 120px;
+			height: auto;
+		}
+
 		button {
-			background-color: #4CAF50;
+			background-color: #2d2d2d;
 			color: #fff;
 			border: none;
-			border-radius: 5px;
+			border-radius: 50px;
 			font-size: 20px;
-			padding: 10px 20px;
+			padding: 10px 30px;
 			cursor: pointer;
 			margin-top: 20px;
+			box-shadow: 0px 0px 5px #888888;
+			transition: all 0.3s ease;
 		}
 
 		button:hover {
-			background-color: #3e8e41;
+			background-color: #212121;
+			box-shadow: 0px 0px 10px #888888;
+		}
+
+		footer {
+			background-color: #2d2d2d;
+			color: #fff;
+			padding: 20px;
+			text-align: right;
+			font-size: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		footer p {
+			margin: 0;
+		}
+
+		.footer-left {
+			text-align: left;
+		}
+
+		.footer-right {
+			text-align: right;
+			margin-right: 50px;
+		}
+
+		.data-demons {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.text-red {
+			color: red;
 		}
 	</style>
 </head>
 <body>
 	<header>
-		<h1>Welcome to my Water Quality Checker</h1>
+		<div class="data-demons">
+			<h1>DATA DEMONS</h1>
+		</div>
+		<div>
+			<img src="{{ url_for('static', filename='DDLOGO.png') }}" alt="Logo" id="logo">
+		</div>
 	</header>
 
 	<div style="text-align: center;">
-		<button onclick="window.location.href='/water_quality'">Next</button>
+		<h1>Water Quality Checker</h1>
+		<button onclick="window.location.href='/water_quality'" class="text-red">TEST NOW</button>
+		<div style="margin-top: 20px;">
+			<img src="{{ url_for('static', filename='WATER_CODE.png') }}" alt="Water Quality Image" width="800">
+		</div>
 	</div>
+
+	<footer>
+		<div class="footer-left">
+			<p>&copy; 2023 Data Demons</p>
+		</div>
+		<div class="footer-right">
+			<p>Bennett University, Greater Noida</p>
+			<p>Contact: Akshay Negi, +91 7088839967</p>
+		</div>
+	</footer>
 	
 </body>
 </html>
+
+
+
+

@@ -7,18 +7,27 @@
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
+			background-color: #262626;
 		}
 
 		header {
-			background-color: #4CAF50;
+			background-color: #2d2d2d;
 			color: #fff;
 			padding: 20px;
-			text-align: center;
+			text-align: right;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
 
 		h1 {
 			font-size: 36px;
 			margin: 0;
+		}
+
+		#logo {
+			width: 120px;
+			height: auto;
 		}
 
 		form {
@@ -33,12 +42,13 @@
 			display: block;
 			font-size: 20px;
 			margin-bottom: 10px;
+			color:#fcfcfc
 		}
 
 		input[type="text"] {
 			font-size: 20px;
 			padding: 10px;
-			border: 1px solid #ccc;
+			border: 1px solid #e0dddd;
 			border-radius: 5px;
 			margin-bottom: 20px;
 			width: 100%;
@@ -46,7 +56,7 @@
 		}
 
 		input[type="submit"] {
-			background-color: #4CAF50;
+			background-color: #2d2d2d  ;
 			color: #fff;
 			border: none;
 			border-radius: 5px;
@@ -57,7 +67,7 @@
 		}
 
 		input[type="submit"]:hover {
-			background-color: #3e8e41;
+			background-color: #212121;
 		}
 
 		.result {
@@ -65,7 +75,7 @@
 			padding: 20px;
 			border: 1px solid #ccc;
 			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 0 10px rgba(255, 255, 255);
 		}
 
 		.result h2 {
@@ -79,7 +89,7 @@
 		}
 
 		.good {
-			color: #009933;
+			color: #212121;
 			font-weight: bold;
 		}
 
@@ -87,15 +97,50 @@
 			color: #ff0000;
 			font-weight: bold;
 		}
+		footer {
+			background-color: #2d2d2d;
+			color: #fff;
+			padding: 20px;
+			text-align: right;
+			font-size: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		.data-demons {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.text-red {
+			color: red;
+		}
+		.abc{
+			color: #ccc;
+		}
+
 	</style>
 </head>
 <body>
 	<header>
-		<h1>Water Potability Checker</h1>
+		<div class="data-demons">
+			<h1>DATA DEMONS</h1>
+		</div>
+		<div>
+			<img src="{{ url_for('static', filename='DDLOGO.png') }}" alt="Logo" id="logo">
+		</div>
+	</header>
+	<header>
+		<h1>AQUACHECK - Water Potability Checker</h1>
 	</header>
 
 	<form method="post" action="/check_water_quality" onkeypress="return event.keyCode != 13;">
-		<label for="ph">pH Level:</label>
+		<label for="ph" class="abc">pH Level:</label>
 		<input type="text" id="ph" name="ph" placeholder="Enter pH level (0-14)">
 	
 		<label for="turbidity">Turbidity:</label>
@@ -114,18 +159,16 @@
 		<input type="text" id="Sulfate" name="Sulfate" placeholder="Enter Sulfate level (ppm)">
 	
 		<label for="Conductivity">Conductivity:</label>
-		<input type="text" id="Conductivity" name="Conductivity" placeholder="Enter Conductivity level (ppm)">
+		<input type="text" id="Conductivity" name="Conductivity" placeholder="Enter Conductivity level (μS/cm)">
 	
-		<label for="organic carbon">organic carbon:</label>
-		<input type="text" id="organic carbon" name="organic carbon" placeholder="Enter organic carbon level (ppm)">
+		<label for="Organic Carbon">Organic Carbon:</label>
+		<input type="text" id="organic carbon" name="organic carbon" placeholder="Enter Organic carbon level (ppm)">
 	
-		<label for="Trihalomethanes">Trihalomethanes:</label>
+		<label for="Trihalomethanes" >Trihalomethanes:</label>
 		<input type="text" id="Trihalomethanes" name="Trihalomethanes" placeholder="Enter Trihalomethanes level (ppm)">
 	
 		<input type="submit" value="Check Potability">
 	</form>
-	
-	
 
 	</body>
   </html>
